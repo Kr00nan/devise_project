@@ -1,2 +1,14 @@
-<h1>Inspirations#edit</h1>
-<p>Find me in app/views/inspirations/edit.html.erb</p>
+<h1>Edit the inspirational source and message:</h1>
+<%= form_with(model: @account, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :source %>
+    <%= f.text_field :source %>
+  </div>
+
+  <div class="field">
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

@@ -1,4 +1,6 @@
 class InspirationsController < ApplicationController
+  before_action :set_inspiration, only: [:show, :update, :edit, :destroy]
+
   def index
     @inspirations = current_user.inspirations
   end
@@ -37,7 +39,7 @@ class InspirationsController < ApplicationController
 
   private
     def inspiration_params
-      params.require(:inspiration).permit(:type, :body)
+      params.require(:inspiration).permit(:source, :body)
     end
 
     def set_inspiration

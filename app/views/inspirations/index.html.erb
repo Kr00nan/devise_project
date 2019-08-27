@@ -1,2 +1,13 @@
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h1>Welcome, <%= current_user.name %></h1>
+<h2>Welcome <%= current_user.first_name %></h2>
+<%= link_to 'Edit User', edit_user_registration_path %>
+<hr />
+<%= link_to "Add Inspiration!", new_inspiration_path %>
+<h3>Your Current Sources of Inspiration</h3>
+<ul>
+  <% @inspirations.each do |inspiration| %>
+    <li>
+      <%= inspiration.source %> :: <%= inspiration.body %>
+    </li>
+  <% end %>
+</ul>

@@ -1,9 +1,14 @@
-<div class="field">
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-</div>
+<h1>Add an inspirational source and message:</h1>
+<%= form_with(model: @inspiration, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :source %>
+    <%= f.text_field :source %>
+  </div>
 
-<div class="field">
- <%= f.label :last_name %>
- <%= f.text_field :last_name %>
-</div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
